@@ -18,7 +18,7 @@ describe('practice-2-1', () => {
   it('把A集合中相同的元素统计出数量', () => {
 
     const result = countSameElements(collection);
-
+    console.log(result);
     expect(result).toEqual([
       {key: 'a', count: 3},
       {key: 'e', count: 7},
