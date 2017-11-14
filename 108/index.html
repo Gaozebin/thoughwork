@@ -1,0 +1,234 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
+        <script src="./jquery-3.2.1.js"></script>        
+        <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    </head>
+<body>
+ <style>
+  ul, li {margin: 0;list-style: none;l}
+</style>
+
+<h1>统一建模语言理论测试</h1>
+<div class="row">
+	<div class="form-group">
+	    <lable class="col-md-3">考试科目: 统一建模语言</lable>
+	    <lable class="col-md-3">时间：100分钟</lable>
+	    <lable class="col-md-3">得分：100</lable>
+	</div>
+</div>
+<div class="row">
+	<div class="form-group">
+		<lable class="col-md-3">班级: <input type="text" value="1班"></lable>
+	    <lable class="col-md-3">学号：<input type="text" value="001"></lable>
+	    <lable class="col-md-3">姓名：<input type="text" value="stevenjack" id="name"></lable>
+	</div>
+</div>
+
+
+
+<h2>一、填空题（每空5分，共20分）</h2>
+    <form class="form-inline">
+		<div class="form-group">
+            <label>1.UML的中文全称是：</label>
+            <input type="text" class="form-control" id="umlChineseName">
+        </div>
+    </form>
+    <form class="form-inline">
+   		<div class="form-group">
+            <lable>2.对象最突出的特征是：</lable>
+            <input type="text" class="form-control" id="feature1">
+            <input type="text" class="form-control" id="feature2">
+            <input type="text" class="form-control" id="feature3">
+        </div>
+    </form>
+  
+<h2>二、选择题（每空10分，共20分）</h2>
+  <ul>
+    <li><p>1.UML与软件工程的关系：</p></li>
+    <li>
+      <ul>
+          <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios1" value=0>
+                (A)UML就是软件工程
+              </label>
+          </div>
+          <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios1" value=10>
+                (B)UML参与到软件工程中软件开发过程的几个阶段
+              </label>
+          </div>
+          <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios1" value=0>
+                (C)UML与软件工程无关
+              </label>
+          </div>
+          <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios1" value=0>
+                (D)UML是软件工程的一部分
+              </label>
+          </div>
+        </ul>
+    </li>
+  </ul>
+  <ul>
+    <li><p>2.Java语言支持：</p></li>
+    <li>
+        <ul>
+            <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios2" value=10>
+                  (A)单继承
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios2" value=0>
+                  (B)多继承
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios2" value=0>
+                  (C)单继承和多继承都支持
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios2" value=0>
+                  (D)单继承和多继承都不支持
+                </label>
+            </div>
+      </ul>
+    </li>
+  </ul>
+<h2>三、多择题（每空10分，共20分）</h2>
+  <ul>
+    <li><p>1.用例的粒度分为以下哪三种：</p></li>
+    <li>
+      <ul>
+            <div class="input-group">
+                <input type="checkbox" name="checkbox1" value=3>
+                (A)概述级
+            </div>
+            <div class="input-group">
+                <input type="checkbox" name="checkbox1" value=3>
+                (B)需求级
+            </div>
+            <div class="input-group">
+                <input type="checkbox" name="checkbox1" value=0>
+                (C)用户目标级
+            </div>
+            <div class="input-group">
+                <input type="checkbox" name="checkbox1" value=4>
+                (D)子功能级
+            </div>
+      </ul>
+    </li>
+  </ul>
+  <ul>
+    <li><p>2.类图由以下那三部分组成：</p></li>
+    <li>
+        <ul>
+              <div class="input-group">
+                  <input type="checkbox" name="checkbox2" value=3>
+                  (A)名称
+              </div>
+              <div class="input-group">
+                  <input type="checkbox" name="checkbox2" value=3>
+                  (B)属性
+              </div>
+              <div class="input-group">
+                  <input type="checkbox" name="checkbox2" value=4>
+                  (C)操作
+              </div>
+              <div class="input-group">
+                  <input type="checkbox" name="checkbox2" value=0>
+                  (D)方法
+              </div>
+        </ul>
+    </li>
+  </ul>
+<h2>四、判断题（每空10分，共20分）</h2>
+  <ul>
+    <li>
+        1.用例图只是用户客户交流和沟通的，用于确定需求。
+        <span>
+          <input type="radio" name="radio3" value=0>√
+          <input type="radio" name="radio3" value=10>×
+        </span>
+    </li>
+    <li>2.在状态图中，终止状态在一个状态途中允许有任意多个。
+      <span>
+        <input type="radio" name="radio4" value=10>√
+        <input type="radio" name="radio4" value=0>×
+    	</span>
+    </li>
+  </ul>
+<h2>五、简答题（每空20分，共20分）</h2>
+  <ul>
+      <li>1.简述什么事模型以及模型的表现形式？</li>
+      <li>
+        <textarea rows="7" cols="90" id="test1">
+        </textarea>
+      </li>
+
+  </ul>
+  <input type="button" value="计算分数" id="getSocre">
+  
+</body>
+
+<script type="text/javascript">
+	$("#getSocre").click(function(){
+		var count = 0;
+		// 填空题的求值
+		if($("#umlChineseName").val() == "统一建模语言"){
+			count += 5;
+		}
+		if($("#feature1").val() == "封装性"){
+			count += 5;
+		}
+		if ($("#feature2").val() == "继承性") {
+			count += 5;
+		}
+		if ($("#feature3").val() == "多态性") {
+			count += 5;
+		}
+		if($("#test1").val() == "模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；或者是一种数学表达式"){
+			count += 20;
+		}
+		
+		// 复选按钮的求值
+		var checkBox_socre1 = $('input:checkbox[name="checkbox1"]:checked');
+		count = getScore1(checkBox_socre1,count)
+		var checkBox_socre2 = $('input:checkbox[name="checkbox2"]:checked');
+		count = getScore1(checkBox_socre2,count);
+
+		// 单选按钮的求值
+		if($('input:radio[name="optionsRadios1"]:checked').val() != null){
+			count += parseInt($('input:radio[name="optionsRadios1"]:checked').val());
+		}
+		if($('input:radio[name="optionsRadios2"]:checked').val() != null){
+			count += parseInt($('input:radio[name="optionsRadios2"]:checked').val());
+		}
+		if($('input:radio[name="radio3"]:checked').val() != null){
+			count += parseInt($('input:radio[name="radio3"]:checked').val());
+		}
+		if ($('input:radio[name="radio4"]:checked').val() != null) {
+			count += parseInt($('input:radio[name="radio4"]:checked').val());
+		}
+		alert("亲爱的 "+$("#name").val()+ " 同学,恭喜你获得 "+count+" 分");
+	});
+	function getScore1(checkBox_socre,count){
+		for (var i = 0; i < checkBox_socre.length; i++) {
+			count += parseInt(checkBox_socre[i].value);
+		}
+		return count;
+	}
+
+</script>>
+</html>
