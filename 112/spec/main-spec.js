@@ -23,39 +23,40 @@ describe('pos', function () {
         ];
     });
 
-    it("is format correct ?", function(){
-        var result = main.format(inputs);
-        var expectText =[
-                { 
-                    barcode: 'ITEM000001', 
-                    count: 5, name: '雪碧', 
-                    unit: '瓶', 
-                    price: 3, 
-                    subtotal: 15 
-                }, 
-                { 
-                    barcode: 'ITEM000003', 
-                    count: 2, 
-                    name: '荔枝', 
-                    unit: '斤',
-                    price: 15, 
-                    subtotal: 30 
-                 }, 
-                 { 
-                    barcode: 'ITEM000005', 
-                    count: 3, 
-                    name: '方便面', 
-                    unit: '袋',
-                    price: 4.5, 
-                    subtotal: 13.5 
-                }
-        ];
+    // it("is format correct ?", function(){
+    //     var result = main.format(inputs);
+    //     var expectText =[
+    //             { 
+    //                 barcode: 'ITEM000001', 
+    //                 count: 5, name: '雪碧', 
+    //                 unit: '瓶', 
+    //                 price: 3, 
+    //                 subtotal: 15 
+    //             }, 
+    //             { 
+    //                 barcode: 'ITEM000003', 
+    //                 count: 2, 
+    //                 name: '荔枝', 
+    //                 unit: '斤',
+    //                 price: 15, 
+    //                 subtotal: 30 
+    //              }, 
+    //              { 
+    //                 barcode: 'ITEM000005', 
+    //                 count: 3, 
+    //                 name: '方便面', 
+    //                 unit: '袋',
+    //                 price: 4.5, 
+    //                 subtotal: 13.5 
+    //             }
+    //     ];
 
-        expect(result).toEqual(expectText);
-    });
+    //     expect(result).toEqual(expectText);
+    // });
 
     it("is getPromotion correct ?", function(){
         var cart = main.format(inputs);
+
         var result = main.getPromotion(cart);
         var expectText =[ 
             { 
