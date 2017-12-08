@@ -35,7 +35,16 @@ module.exports = () => {
 						return false;
 					}
 				}
-			    if((result.length == 8) && checkSubject(result)){
+				function isExisted(result){
+					for(let e of students){
+						if(result[1] == e.stuNum){
+							console.log("此账号已存在!!!");
+							return false;
+						}
+					}
+					return true;
+				}
+			    if((result.length == 8) && checkSubject(result) && isExisted(result)){
 			    	return true;
 			    } else{
 			    	return false;
@@ -61,8 +70,55 @@ module.exports = () => {
 		} else if (number == 2){
 			var student_number = question('请输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：');
 			var student_number_list = student_number.split(",");
-			if(student_number_list > 0){
+			
+			if(student_number_list.length > 0){
+				function getStudentInfo(student_number_list) {
+					var result = [];
+					for(let e of student_number_list){
+						for(let student of students){
+							if(e == student.stuNum){
+								result.push(student);
+							}
+						}
+					}
+					return result;
+				}
+				var result = getStudentInfo(student_number_list);
+				var classAvg = 0;
+				var classMiddle = [];
+				var count = 0;
+				var classMiddleCount;
+				var expectText = 
+					"成绩单\n" +
+					"姓名   |数学   |语文   |英语   |编程   |平均分    |总分   \n" +
+					"========================================\n";
+				for(let student of result){
+					var sum = student.mathScore + student.chiScore + student.engScore + student.proScore;
+					var avg = sum / 4;
+					expectText += student.name + "   |   " + student.mathScore + "  |  " +
+								  student.chiScore + " |  " + student.engScore + "  |  " +
+								  student.proScore + "  |  " + avg + "  |  " + sum + "\n";
+				}
+				for(let student of students){
+					var sum = student.mathScore + student.chiScore + student.engScore + student.proScore;
+				    classAvg += sum;
+				    count++;
+				    classMiddle.push(sum);
+				}
+				classMiddle.sort();
+				var classMiddleLength = parseInt(classMiddle.length / 2);
+				if (classMiddle.length %2 == 0) {
+					classMiddleCount = (classMiddle[classMiddleLength - 1] + classMiddle[classMiddleLength])/2;
+				} else{
+					classMiddleCount = classMiddle[classMiddleLength];
+				}
+				expectText += "全班总分平均数：" + classAvg / count + "\n";
+				expectText += "全班总分中位数：" + classMiddleCount + "\n";
 
+				console.log(expectText);
+
+			} else{
+				console.log("请按正确的格式输入要打印的学生的学号（格式： 学号, 学号,...）");
 			}
 
 
