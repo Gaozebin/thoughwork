@@ -4,21 +4,105 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../node_modules/lodash/lodash.min.js"></script>
-    <script src="js/main.js"></script>
+ 
+    <script src="/js/main.js"></script>
 
-    <title>Form Designer</title>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>表单设计器</title>
 </head>
 
 <body>
 <div>
     <div id="container">
-    	<button id="addText">添加</button>
+    	<button data-toggle="modal" id="seeAll">预览</button>
+    	<button data-toggle="modal" data-target="#addText" id="addText1">添加</button>
+    	<table class="table">
+	   <thead>
+	      <tr>
+	         <th>名称</th>
+	         <th>操作</th>
+	      </tr>
+	   </thead>
+	   <tbody id="wordList">
+	     
+	   </tbody>
+	</table>
+
+    </div>
+</div>
+
+<div class="modal fade" id="addText" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">添加模块</h4>
+            </div>
+           	<div style="margin: 30px;text-align: center;">
+				 <select name="selectValue" id="selectValue">
+			        <option selected="selected" value=""></option>
+			        <option value="文本">文本</option>
+			        <option value="日期">日期</option>
+			    </select>
+			</div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="cancleSelect">关闭</button>
+                <button type="button" class="btn btn-primary" id="submitSelect">提交</button>
+            </div>
+        </div>
     </div>
 </div>
 </body>
+
+<script type="text/javascript">
+	/**
+		添加表单元素
+	*/
+	$("#submitSelect").click(function(){
+		var selectValue = $("#selectValue").val();
+		if(selectValue != ""){
+			$("#wordList").append(`
+	 			<tr>
+			         <td>`+ selectValue +`</td>
+			         <td>
+			         	<button class="deleteTheWord">删除</button>
+				    	
+			         </td>
+		      	</tr>
+			`);
+			$(".deleteTheWord").click(function(){
+				$(this).parent().parent("tr").remove();
+			});
+		} else{
+			alert("添加不能为空！！！！！");
+		}
+		$("#cancleSelect").click();
+	});
+
+	$("#seeAll").click(function(){
+		var seeAll = $("#seeAll").text();
+		if (seeAll == "预览") {
+			$("#seeAll").text("编辑");
+		
+		} else{
+			$("#seeAll").text("预览");
+		}
+		$("#addText1").toggle();
+		$(".deleteTheWord").toggle();
+	});
+
+	
+
+
+</script>
 </html>
+
+
+
 
