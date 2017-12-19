@@ -24,8 +24,8 @@ export class Class {
   appendMember(student){
   	student.klass = this;
   	if(this.teacher != undefined){
-		if(this.teacher.isTeaching(student)){
-	  		console.log("I am "+ this.teacher.name+". I know "+ student.name +" has joined Class "+ student.klass.number +".")
+  		if(this.teacher.isTeaching(student)){
+  	  		console.log("I am "+ this.teacher.name+". I know "+ student.name +" has joined Class "+ student.klass.number +".")
 	  	}
   	}
   	
